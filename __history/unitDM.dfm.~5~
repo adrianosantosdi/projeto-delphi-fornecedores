@@ -1,0 +1,104 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 505
+  Width = 698
+  object FDConn: TFDConnection
+    Params.Strings = (
+      'Database=dbfornecedores'
+      'User_Name=root'
+      'Password=p@ssw0rd'
+      'DriverID=MySQL')
+    Connected = True
+    LoginPrompt = False
+    Left = 88
+    Top = 96
+  end
+  object QryFornecedores: TFDQuery
+    Connection = FDConn
+    SQL.Strings = (
+      'select * from fornecedores')
+    Left = 80
+    Top = 184
+    object QryFornecedoresid: TFDAutoIncField
+      FieldName = 'id'
+    end
+    object QryFornecedoresnome: TStringField
+      FieldName = 'nome'
+      Required = True
+      Size = 100
+    end
+    object QryFornecedoresendereco: TStringField
+      FieldName = 'endereco'
+      Required = True
+      Size = 100
+    end
+    object QryFornecedoresbairro: TStringField
+      FieldName = 'bairro'
+      Required = True
+      Size = 100
+    end
+    object QryFornecedorescidade: TStringField
+      FieldName = 'cidade'
+      Required = True
+      Size = 100
+    end
+    object QryFornecedoresuf: TStringField
+      FieldName = 'uf'
+      Required = True
+      FixedChar = True
+      Size = 2
+    end
+    object QryFornecedorescep: TStringField
+      FieldName = 'cep'
+      Required = True
+      Size = 9
+    end
+    object QryFornecedoresCNPJ: TStringField
+      FieldName = 'CNPJ'
+      Required = True
+      Size = 14
+    end
+    object QryFornecedoresie: TStringField
+      FieldName = 'ie'
+      Required = True
+      Size = 50
+    end
+    object QryFornecedorescelular: TStringField
+      FieldName = 'celular'
+      Required = True
+      Size = 14
+    end
+    object QryFornecedorescontato: TStringField
+      FieldName = 'contato'
+      Required = True
+      Size = 50
+    end
+    object QryFornecedoresemail: TStringField
+      FieldName = 'email'
+      Required = True
+      Size = 50
+    end
+    object QryFornecedoressite: TStringField
+      FieldName = 'site'
+      Required = True
+      Size = 50
+    end
+    object QryFornecedoresobservacoes: TMemoField
+      FieldName = 'observacoes'
+      Required = True
+      BlobType = ftMemo
+    end
+  end
+  object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
+    VendorLib = 
+      'C:\Users\Adriano Santos\Documents\Projetos Delphi\Cadastro Forne' +
+      'cedor\libmySQL.dll'
+    Left = 608
+    Top = 24
+  end
+  object dsFornecedores: TDataSource
+    DataSet = QryFornecedores
+    Left = 176
+    Top = 184
+  end
+end

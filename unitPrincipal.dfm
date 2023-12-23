@@ -1,9 +1,9 @@
-﻿object Form1: TForm1
+object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 647
-  ClientWidth = 1043
+  ClientHeight = 758
+  ClientWidth = 1071
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,22 +11,21 @@
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poMainFormCenter
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 1043
-    Height = 81
+    Width = 1071
+    Height = 97
     Align = alTop
     TabOrder = 0
-    ExplicitLeft = -112
-    ExplicitWidth = 916
-    object SpeedButton1: TSpeedButton
-      Left = 200
+    object btnNovo: TSpeedButton
+      Left = 224
       Top = 16
-      Width = 82
-      Height = 49
+      Width = 81
+      Height = 57
       Caption = 'Novo'
       Glyph.Data = {
         360C0000424D360C000000000000360000002800000020000000200000000100
@@ -127,13 +126,14 @@
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+      OnClick = btnNovoClick
     end
-    object SpeedButton2: TSpeedButton
-      Left = 304
+    object btnSalvar: TSpeedButton
+      Left = 328
       Top = 16
       Width = 81
-      Height = 49
-      Caption = 'Gravar'
+      Height = 57
+      Caption = 'Salvar'
       Glyph.Data = {
         360C0000424D360C000000000000360000002800000020000000200000000100
         180000000000000C0000C40E0000C40E00000000000000000000FCFAF5E0C793
@@ -233,12 +233,13 @@
         D1B26ECAAD6DF8F6F2FBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFB
         FBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBE4D8BBCAAD6DD7B977EE
         D7A7FCF9F1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+      OnClick = btnSalvarClick
     end
-    object SpeedButton3: TSpeedButton
-      Left = 416
+    object btnEditar: TSpeedButton
+      Left = 432
       Top = 16
       Width = 81
-      Height = 49
+      Height = 57
       Caption = 'Editar'
       Glyph.Data = {
         360C0000424D360C000000000000360000002800000020000000200000000100
@@ -339,12 +340,13 @@
         F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9
         F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F6EFDFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+      OnClick = btnEditarClick
     end
-    object SpeedButton4: TSpeedButton
-      Left = 528
+    object btnCancelar: TSpeedButton
+      Left = 536
       Top = 16
-      Width = 82
-      Height = 49
+      Width = 89
+      Height = 57
       Caption = 'Cancelar'
       Glyph.Data = {
         360C0000424D360C000000000000360000002800000020000000200000000100
@@ -445,12 +447,13 @@
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+      OnClick = btnCancelarClick
     end
-    object SpeedButton5: TSpeedButton
-      Left = 632
+    object btnDeletar: TSpeedButton
+      Left = 648
       Top = 16
-      Width = 81
-      Height = 49
+      Width = 89
+      Height = 57
       Caption = 'Deletar'
       Glyph.Data = {
         360C0000424D360C000000000000360000002800000020000000200000000100
@@ -551,211 +554,282 @@
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+      OnClick = btnDeletarClick
     end
   end
   object Panel2: TPanel
     Left = 0
-    Top = 81
-    Width = 1043
-    Height = 566
+    Top = 97
+    Width = 1071
+    Height = 661
     Align = alClient
     TabOrder = 1
-    ExplicitTop = 87
     object Label1: TLabel
-      Left = 24
-      Top = 40
+      Left = 32
+      Top = 32
       Width = 11
       Height = 13
       Caption = 'ID'
     end
     object Label2: TLabel
-      Left = 151
-      Top = 40
+      Left = 159
+      Top = 32
       Width = 29
       Height = 13
       Caption = 'NOME'
     end
     object Label3: TLabel
-      Left = 463
-      Top = 40
-      Width = 45
+      Left = 407
+      Top = 32
+      Width = 54
       Height = 13
-      Caption = 'Endere'#231'o'
+      Caption = 'ENDERE'#199'O'
     end
     object Label4: TLabel
-      Left = 775
-      Top = 40
-      Width = 28
+      Left = 631
+      Top = 32
+      Width = 39
       Height = 13
-      Caption = 'Bairro'
+      Caption = 'BAIRRO'
     end
     object Label5: TLabel
-      Left = 24
-      Top = 88
-      Width = 33
+      Left = 853
+      Top = 32
+      Width = 38
       Height = 13
-      Caption = 'Cidade'
+      Caption = 'CIDADE'
     end
     object Label6: TLabel
-      Left = 263
-      Top = 88
+      Left = 30
+      Top = 80
       Width = 13
       Height = 13
       Caption = 'UF'
     end
     object Label7: TLabel
-      Left = 343
-      Top = 88
+      Left = 157
+      Top = 80
       Width = 19
       Height = 13
-      Caption = 'Cep'
+      Caption = 'CEP'
     end
     object Label8: TLabel
-      Left = 463
-      Top = 88
-      Width = 48
+      Left = 284
+      Top = 80
+      Width = 25
       Height = 13
-      Caption = 'CNPJ/CPF'
+      Caption = 'CNPJ'
     end
     object Label9: TLabel
-      Left = 616
-      Top = 88
+      Left = 467
+      Top = 80
       Width = 10
       Height = 13
       Caption = 'IE'
     end
     object Label10: TLabel
-      Left = 775
-      Top = 88
-      Width = 33
+      Left = 631
+      Top = 80
+      Width = 44
       Height = 13
-      Caption = 'Celular'
+      Caption = 'CELULAR'
     end
     object Label11: TLabel
-      Left = 24
-      Top = 144
-      Width = 39
+      Left = 855
+      Top = 80
+      Width = 49
       Height = 13
-      Caption = 'Contato'
+      Caption = 'CONTATO'
     end
     object Label12: TLabel
-      Left = 263
-      Top = 144
-      Width = 24
+      Left = 30
+      Top = 128
+      Width = 30
       Height = 13
-      Caption = 'Email'
+      Caption = 'EMAIL'
     end
     object Label13: TLabel
-      Left = 616
-      Top = 144
-      Width = 18
+      Left = 284
+      Top = 128
+      Width = 22
       Height = 13
-      Caption = 'Site'
+      Caption = 'SITE'
     end
     object Label14: TLabel
-      Left = 24
-      Top = 192
-      Width = 63
+      Left = 538
+      Top = 128
+      Width = 73
       Height = 13
-      Caption = 'Observa'#231#245'es'
+      Caption = 'OBSERVA'#199#213'ES'
+    end
+    object Label15: TLabel
+      Left = 56
+      Top = 544
+      Width = 79
+      Height = 19
+      Caption = 'Pesquisar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
     end
     object edtId: TEdit
-      Left = 24
-      Top = 59
+      Left = 32
+      Top = 51
       Width = 121
       Height = 21
+      CharCase = ecUpperCase
+      Enabled = False
       TabOrder = 0
     end
     object edtNome: TEdit
-      Left = 151
-      Top = 59
-      Width = 306
+      Left = 159
+      Top = 51
+      Width = 242
       Height = 21
+      CharCase = ecUpperCase
+      Enabled = False
       TabOrder = 1
     end
     object edtEndereco: TEdit
-      Left = 463
-      Top = 59
-      Width = 306
+      Left = 407
+      Top = 51
+      Width = 218
       Height = 21
+      CharCase = ecUpperCase
+      Enabled = False
       TabOrder = 2
     end
     object edtBairro: TEdit
-      Left = 775
-      Top = 59
-      Width = 233
+      Left = 631
+      Top = 51
+      Width = 218
       Height = 21
+      CharCase = ecUpperCase
+      Enabled = False
       TabOrder = 3
     end
     object edtCidade: TEdit
-      Left = 24
-      Top = 107
-      Width = 233
+      Left = 853
+      Top = 51
+      Width = 204
       Height = 21
+      CharCase = ecUpperCase
+      Enabled = False
       TabOrder = 4
     end
     object edtUf: TEdit
-      Left = 263
-      Top = 107
-      Width = 74
+      Left = 32
+      Top = 99
+      Width = 121
       Height = 21
+      CharCase = ecUpperCase
+      Enabled = False
       TabOrder = 5
     end
     object edtCep: TEdit
-      Left = 343
-      Top = 107
-      Width = 114
+      Left = 159
+      Top = 99
+      Width = 121
       Height = 21
+      CharCase = ecUpperCase
+      Enabled = False
       TabOrder = 6
     end
-    object edtCnpjCpf: TEdit
-      Left = 463
-      Top = 107
-      Width = 147
+    object edtCnpj: TEdit
+      Left = 286
+      Top = 99
+      Width = 175
       Height = 21
+      CharCase = ecUpperCase
+      Enabled = False
       TabOrder = 7
     end
     object edtIe: TEdit
-      Left = 616
-      Top = 107
-      Width = 153
+      Left = 467
+      Top = 99
+      Width = 158
       Height = 21
+      CharCase = ecUpperCase
+      Enabled = False
       TabOrder = 8
     end
     object edtCelular: TEdit
-      Left = 775
-      Top = 107
-      Width = 233
+      Left = 631
+      Top = 99
+      Width = 218
       Height = 21
+      CharCase = ecUpperCase
+      Enabled = False
       TabOrder = 9
     end
     object edtContato: TEdit
-      Left = 24
-      Top = 163
-      Width = 233
+      Left = 855
+      Top = 99
+      Width = 202
       Height = 21
+      CharCase = ecUpperCase
+      Enabled = False
       TabOrder = 10
     end
     object edtEmail: TEdit
-      Left = 263
-      Top = 163
-      Width = 347
+      Left = 32
+      Top = 147
+      Width = 248
       Height = 21
+      CharCase = ecUpperCase
+      Enabled = False
       TabOrder = 11
     end
     object edtSite: TEdit
-      Left = 616
-      Top = 163
-      Width = 392
+      Left = 286
+      Top = 147
+      Width = 248
       Height = 21
+      CharCase = ecUpperCase
+      Enabled = False
       TabOrder = 12
     end
-    object edtObservaçoes: TEdit
-      Left = 24
-      Top = 211
-      Width = 233
+    object edtObservacoes: TEdit
+      Left = 540
+      Top = 147
+      Width = 517
       Height = 21
+      CharCase = ecUpperCase
+      Enabled = False
       TabOrder = 13
+    end
+    object DBGrid1: TDBGrid
+      Left = 32
+      Top = 192
+      Width = 1025
+      Height = 289
+      DataSource = DM.dsFornecedores
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+      TabOrder = 14
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+    end
+    object edtPesquisar: TEdit
+      Left = 141
+      Top = 546
+      Width = 320
+      Height = 21
+      TabOrder = 15
+    end
+    object Button1: TButton
+      Left = 467
+      Top = 544
+      Width = 75
+      Height = 25
+      Caption = 'Pesquisar'
+      TabOrder = 16
+      OnClick = Button1Click
     end
   end
 end

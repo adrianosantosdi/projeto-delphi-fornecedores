@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{194CF8A8-7ADF-463D-800C-F264DA56DC19}</ProjectGuid>
+        <ProjectGuid>{A0FEEFF8-D7C3-48CA-ABA3-B18D5FA00CA8}</ProjectGuid>
         <ProjectVersion>18.8</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <MainSource>Fornecedor.dpr</MainSource>

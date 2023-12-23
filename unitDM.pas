@@ -13,9 +13,23 @@ uses
 type
   TDM = class(TDataModule)
     FDConn: TFDConnection;
-    QryFornecedores: TFDQuery;
+    QueryFornecedores: TFDQuery;
     FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
     dsFornecedores: TDataSource;
+    QueryFornecedoresid: TFDAutoIncField;
+    QueryFornecedoresnome: TStringField;
+    QueryFornecedoresendereco: TStringField;
+    QueryFornecedoresbairro: TStringField;
+    QueryFornecedorescidade: TStringField;
+    QueryFornecedoresuf: TStringField;
+    QueryFornecedorescep: TStringField;
+    QueryFornecedorescnpj: TStringField;
+    QueryFornecedoresie: TStringField;
+    QueryFornecedorescelular: TStringField;
+    QueryFornecedorescontato: TStringField;
+    QueryFornecedoresemail: TStringField;
+    QueryFornecedoressite: TStringField;
+    QueryFornecedoresobservacoes: TMemoField;
   private
     { Private declarations }
   public
